@@ -53,7 +53,7 @@ void Game::update(float dt) {
 	
 		break;
 	case State::Play:
-		if(world.is_collide(bird) || std::abs(bird.position.y()) >= screen.top()) {
+		if(world.is_collide(bird) || std::abs(bird.position.y()) >= screen.top() + bird.radius) {
 			state = State::FadeIn;
 		}
 		else {
