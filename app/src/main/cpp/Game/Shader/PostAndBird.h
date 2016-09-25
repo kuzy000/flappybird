@@ -40,8 +40,8 @@ public:
 	Gl::Uniform<Vec2f> bird;
 	Gl::Uniform<float> fade;
 	
-	static std::string vertex_source;
-	static std::string fragment_source;
+	static const std::string vertex_source;
+	static const std::string fragment_source;
 };
 
 }

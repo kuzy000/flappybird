@@ -3,7 +3,7 @@
 namespace Flappy {
 namespace Shader {
 
-std::string PostAndBird::vertex_source = R"glsl(
+const std::string PostAndBird::vertex_source = R"glsl(
 #version 100
 
 #ifdef GL_ES
@@ -24,7 +24,7 @@ void main(void) {
 }
 )glsl";
 
-std::string PostAndBird::fragment_source = R"glsl(
+const std::string PostAndBird::fragment_source = R"glsl(
 #version 100
 
 #ifdef GL_ES

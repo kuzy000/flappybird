@@ -35,8 +35,8 @@ public:
 	Gl::Uniform<float> shift;
 	Gl::Uniform<float> aspect_ratio;
 	
-	static std::string vertex_source;
-	static std::string fragment_source;
+	static const std::string vertex_source;
+	static const std::string fragment_source;
 };
 
 }

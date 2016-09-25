@@ -3,7 +3,7 @@
 namespace Flappy {
 namespace Shader {
 
-std::string Background::vertex_source = R"glsl(
+const std::string Background::vertex_source = R"glsl(
 #version 100
 
 #ifdef GL_ES
@@ -22,7 +22,7 @@ void main(void) {
 }
 )glsl";
 
-std::string Background::fragment_source = R"glsl(
+const std::string Background::fragment_source = R"glsl(
 #version 100
 
 #ifdef GL_ES
