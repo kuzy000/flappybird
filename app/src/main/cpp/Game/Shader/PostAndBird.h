@@ -29,6 +29,7 @@ public:
 		bind_uniform(aspect_ratio, "aspect_ratio");
 		bind_uniform(fbo_tex, "fbo_tex");
 		bind_uniform(bird, "bird");
+		bind_uniform(bird_radius, "bird_radius");
 		bind_uniform(fade, "fade");
 	}
 	
@@ -38,6 +39,7 @@ public:
 	Gl::Uniform<float> aspect_ratio;
 	Gl::Uniform<Gl::Sampler2D> fbo_tex;
 	Gl::Uniform<Vec2f> bird;
+	Gl::Uniform<float> bird_radius;
 	Gl::Uniform<float> fade;
 	
 	static const std::string vertex_source;

@@ -32,6 +32,7 @@ const std::string PostAndBird::fragment_source = R"glsl(
 #endif
 
 uniform vec2 bird;
+uniform float bird_radius;
 uniform sampler2D fbo_tex;
 uniform float fade;
 
@@ -42,8 +43,8 @@ void main(void) {
 	vec3 c = texture2D(fbo_tex, uv).xyz;
 	float t;
 	
-	t = smoothstep(0.06 - 0.003, 0.06 + 0.003, length(screen - bird));
-//	t = step(0.06, length(screen - bird));
+	t = smoothstep(bird_radius - 0.003, bird_radius + 0.003, length(screen - bird));
+//	t = step(bird_radius, length(screen - bird));
 	c = mix(vec3(0.8, 0.2, 0.2), c, t);
 	
 //	c *= fade * pow(cos(uv.x - 0.5) * cos(screen.y), 0.4);

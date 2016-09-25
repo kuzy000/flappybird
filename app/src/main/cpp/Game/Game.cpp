@@ -121,6 +121,7 @@ void Game::render(float dt) {
 	prog_post_and_bird.position.enable();
 	prog_post_and_bird.aspect_ratio.set(aspect_ratio);
 	prog_post_and_bird.bird.set(bird.position);
+	prog_post_and_bird.bird_radius.set(bird.radius);
 	prog_post_and_bird.fade.set(fade);
 	prog_post_and_bird.fbo_tex.set(0);
 	Gl::draw_elements(Gl::DrawMode::Triangles, static_cast<GLsizei>(ScreenRect::indecies_count), Gl::ElementsType::UInt);
