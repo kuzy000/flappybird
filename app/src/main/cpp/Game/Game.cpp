@@ -94,6 +94,9 @@ void Game::render(float dt) {
 	
 	// columns
 	for(auto& chunk : world.chunks) {
+		if(chunk.shift < Game::screen.left() - chunk.get_width() || chunk.shift > Game::screen.right()) {
+			continue;
+		}
 		chunk.vbo.bind(Gl::Buffer::Target::Array);
 		chunk.ibo.bind(Gl::Buffer::Target::ElementArray);
 		prog_column.use();
