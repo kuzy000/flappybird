@@ -33,6 +33,7 @@ Game::Game(Engine& engine)
 }
 
 void Game::new_game() {
+	state = State::FadeOut;
 	world.new_game();
 	bird.new_game();
 }
@@ -66,7 +67,6 @@ void Game::update(float dt) {
 	case State::FadeIn:
 		fade -= 2.7f * dt;
 		if(fade <= -0.2f) {
-			state = State::FadeOut;
 			new_game();
 		}
 		break;
