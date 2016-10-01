@@ -39,7 +39,7 @@ void Game::new_game() {
 }
 
 void Game::update(float dt) {
-	bg_shift += 0.2f * dt;
+	shift_background(0.2f * dt);
 	
 	// FadeOut -> Prepare (tap to play) -> Play -> FadeIn (on fail) -> FadeOut
 	switch(state) {
@@ -61,7 +61,7 @@ void Game::update(float dt) {
 			bird.update(dt);
 			world.move(speed * dt);
 		}
-		bg_shift += (speed - 0.3f) * dt;
+		shift_background((speed - 0.3f) * dt);
 	
 		break;
 	case State::FadeIn:
@@ -156,6 +156,16 @@ void Game::tap_down(Vec2u pos) {
 		state = State::Play;
 	}
 	bird.jump();
+}
+
+void Game::shift_background(float value) {
+	bg_shift += value;
+	
+	//	sin(_ + shift * 1.5) + cos(_ + shift * 0.75) => T = 8/3 * pi
+	const float t = static_cast<float>(M_PI * 8. / 3.);
+	if(bg_shift >= t) {
+		bg_shift -= t;
+	}
 }
 
 }

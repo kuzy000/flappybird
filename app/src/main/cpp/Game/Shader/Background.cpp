@@ -32,7 +32,7 @@ const std::string Background::fragment_source = R"glsl(
 uniform float shift;
 varying vec2 uv;
 
-#define PI 3.1415
+#define PI 3.1415926535897932384626433832795
 
 void main(void) {
 	vec3 front = vec3(0.65, 0.65, 0.95);

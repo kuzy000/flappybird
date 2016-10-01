@@ -35,6 +35,8 @@ private:
 	void resize(Size2u size);
 	void tap_down(Vec2u pos);
 	
+	void shift_background(float value);
+	
 	Engine& engine;
 	
 	enum class State { FadeOut, Prepare, Play, FadeIn };
