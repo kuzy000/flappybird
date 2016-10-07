@@ -25,11 +25,11 @@ public:
 		current.erase(current.size() - indention_string.size());
 	}
 
-	void setProxy(std::streambuf* value) {
+	void set_proxy(std::streambuf* value) {
 		buf = value;
 	}
 
-	std::streambuf* getProxy() const {
+	std::streambuf* get_proxy() const {
 		return buf;
 	}
 
@@ -85,11 +85,11 @@ private:
 
 	template <typename Head, typename... Tail>
 	void impl(Head&& head, Tail&&... tail) {
-		indent_buf.setProxy(os.rdbuf());
+		indent_buf.set_proxy(os.rdbuf());
 
 		os.rdbuf(&indent_buf);
 		os << std::forward<Head>(head);
-		os.rdbuf(indent_buf.getProxy());
+		os.rdbuf(indent_buf.get_proxy());
 
 		impl(std::forward<Tail>(tail)...);
 	}
